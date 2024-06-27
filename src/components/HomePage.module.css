@@ -1,0 +1,85 @@
+.input {
+  width: calc(100% - 2px * 2 - 8px * 2);
+  border: 2px solid #06c;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+.wrapper {
+  max-width: calc(1024px - 8px);
+  padding: 0 8px;
+  margin: 0 auto;
+}
+
+.output {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font__block {
+  min-width: 300px;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.output__libre_barcode_128 {
+  font-family: "Libre Barcode 128", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3em;
+  text-align: center;
+}
+
+.output__libre_barcode_128_text {
+  font-family: "Libre Barcode 128 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3em;
+  text-align: center;
+}
+
+.output_libre_barcode_ean39_text {
+  font-family: "Libre Barcode EAN13 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.table__block {
+  overflow-x: scroll;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table tr th,
+.table tr td {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.td__a {
+  display: block;
+  width: calc(100% - 4px * 2 - 1px * 2);
+  height: 100%;
+  border: 1px solid #06c;
+  background-color: #06c;
+  text-decoration: none;
+  color: white;
+  padding: 4px;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.td__a:hover {
+  background-color: transparent;
+  color: #06c;
+}
