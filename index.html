@@ -1,21 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Шрифты Libre Barcode</title>
-    <meta name="description" content="Шрифты Libre Barcode 128, Libre Barcode EAN13" />
-    <meta name="keywords" content="Шрифты Libre Barcode 128 EAN13" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libre Barcode (Штрихкоды Libre Barcode для Libre Office)</title>
+    <meta name="description"
+        content="Libre Barcode (Штрихкоды Libre Barcode для Libre Office): Libre Barcode 128, Libre Barcode EAN13" />
+    <meta name="keywords" content="Libre Barcode 128 штрихкоды EAN13 libre office" />
+    <link href="cdn/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @font-face {
+            font-family: 'Libre Barcode 128';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(font/Libre_Barcode_128/LibreBarcode128.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Libre Barcode 128 Text';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(font/Libre_Barcode_128_Text/LibreBarcode128Text.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Libre Barcode EAN13 Text';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(font/Libre_Barcode_EAN13_Text/LibreBarcodeEAN13Text.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="194x194" href="favicon-194x194.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0066cc" />
+    <meta name="apple-mobile-web-app-title" content="Get Libre Barcode" />
+    <meta name="application-name" content="Get Libre Barcode" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1>Barcodes in Libre Office (Штрихкоды в Libre Office)</h1>
+
+        <div class="mt-4">
+            <p>Input barcode (введите штрихкод):</p>
+            <input id="gpi_input" class="form-control" type="text" value="900413140919000" oninput="setBarcodes()" />
+        </div>
+
+        <div class="mt-4" style="width: 100%; overflow-x: scroll;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Font Family (Шрифт)</th>
+                        <th class="text-center" width="200">Text (что писать)</th>
+                        <th class="text-center" width="400">View (что отобразится)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a target="_blank" href="font/Libre_Barcode_128/LibreBarcode128-Regular.ttf"
+                                title="Download and install (скачай и установи)">Libre Barcode
+                                128</a>
+                        </td>
+                        <td class="text-center" id="gpi_libre_barcode_128_input"></td>
+                        <td class="text-center" id="gpi_libre_barcode_128_output"></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="font/Libre_Barcode_128_Text/LibreBarcode128Text-Regular.ttf"
+                                title="Download and install (скачай и установи)">Libre
+                                Barcode 128 Text</a></td>
+                        <td class="text-center" id="gpi_libre_barcode_128_text_input"></td>
+                        <td class="text-center" id="gpi_libre_barcode_128_text_output"></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="font/Libre_Barcode_EAN13_Text/LibreBarcodeEAN13Text-Regular.ttf"
+                                title="Download and install (скачай и установи)">Libre Barcode
+                                EAN13 Text</a></td>
+                        <td class="text-center" id="gpi_libre_barcode_ean13_text_input"></td>
+                        <td class="text-center" id="gpi_libre_barcode_ean13_text_output"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 mb-4">
+            <a target="_blank" class="btn btn-success"
+                href="https://www.libreoffice.org/download/download-libreoffice/">Download Libre Office (Скачать Libre
+                Office)</a>
+        </div>
+    </div>
+    <script src="package/getLibreBarcode128Text/getLibreBarcode128Text.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
