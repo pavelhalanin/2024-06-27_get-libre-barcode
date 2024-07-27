@@ -63,7 +63,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Font Family (Шрифт)</th>
+                        <th class="text-center">Font Family (Шрифт)</th>
                         <th class="text-center" width="200">Text (что писать)</th>
                         <th class="text-center" width="400">View (что отобразится)</th>
                     </tr>
@@ -71,7 +71,8 @@
                 <tbody>
                     <tr>
                         <td>
-                            <a target="_blank" href="font/Libre_Barcode_128/LibreBarcode128-Regular.ttf"
+                            <a class="btn btn-primary" style="width: 100%;" target="_blank"
+                                href="font/Libre_Barcode_128/LibreBarcode128-Regular.ttf"
                                 title="Download and install (скачай и установи)">Libre Barcode
                                 128</a>
                         </td>
@@ -79,14 +80,16 @@
                         <td class="text-center" id="gpi_libre_barcode_128_output"></td>
                     </tr>
                     <tr>
-                        <td><a target="_blank" href="font/Libre_Barcode_128_Text/LibreBarcode128Text-Regular.ttf"
+                        <td><a class="btn btn-primary" style="width: 100%;" target="_blank"
+                                href="font/Libre_Barcode_128_Text/LibreBarcode128Text-Regular.ttf"
                                 title="Download and install (скачай и установи)">Libre
                                 Barcode 128 Text</a></td>
                         <td class="text-center" id="gpi_libre_barcode_128_text_input"></td>
                         <td class="text-center" id="gpi_libre_barcode_128_text_output"></td>
                     </tr>
                     <tr>
-                        <td><a target="_blank" href="font/Libre_Barcode_EAN13_Text/LibreBarcodeEAN13Text-Regular.ttf"
+                        <td><a class="btn btn-primary" style="width: 100%;" target="_blank"
+                                href="font/Libre_Barcode_EAN13_Text/LibreBarcodeEAN13Text-Regular.ttf"
                                 title="Download and install (скачай и установи)">Libre Barcode
                                 EAN13 Text</a></td>
                         <td class="text-center" id="gpi_libre_barcode_ean13_text_input"></td>
@@ -96,12 +99,18 @@
             </table>
         </div>
         <div class="mt-4 mb-4">
-            <a target="_blank" class="btn btn-success"
-                href="https://www.libreoffice.org/download/download-libreoffice/">Download Libre Office (Скачать Libre
+            <button class="btn btn-success" style="width: 100%;" onclick="gpi_downloadAsExcel()">Download result as
+                *.xlsx (Скачать результат как *.xlsx)</button>
+        </div>
+        <div class="mt-4 mb-4">
+            <a target="_blank" class="btn btn-secondary" style="width: 100%;"
+                href="https://www.libreoffice.org/download/download-libreoffice/">Download and install Libre Office
+                (Скачать и установить Libre
                 Office)</a>
         </div>
     </div>
     <script src="package/getLibreBarcode128Text/getLibreBarcode128Text.js"></script>
+    <script src="cdn/node_modules/exceljs/dist/exceljs.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
